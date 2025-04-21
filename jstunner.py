@@ -559,7 +559,7 @@ def main():
     print_banner()
     
     parser = argparse.ArgumentParser(
-        description="JST-Stunner - Tool untuk menemukan file JS, endpoint API, dan kerentanan pada domain",
+        description="JStunner - Tool untuk menemukan file JS, endpoint API, dan kerentanan pada domain",
         formatter_class=argparse.RawTextHelpFormatter
     )
     
