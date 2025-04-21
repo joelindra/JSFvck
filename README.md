@@ -1,8 +1,8 @@
-# JST-Stunner
+# JStunner
 
 ![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
 
-JST-Stunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoint, dan kerentanan keamanan pada domain target. Alat ini dirancang untuk membantu pengujian penetrasi dan bug bounty hunter dalam mengidentifikasi potensial kerentanan.
+JStunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoint, dan kerentanan keamanan pada domain target. Alat ini dirancang untuk membantu pengujian penetrasi dan bug bounty hunter dalam mengidentifikasi potensial kerentanan.
 
 ## Fitur
 
@@ -18,7 +18,7 @@ JST-Stunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoi
 
 ## Prasyarat
 
-JST-Stunner membutuhkan beberapa tool untuk dijalankan dengan baik. Tool-tool ini dapat diinstal secara manual atau melalui manajer paket seperti apt, brew, dll.
+JStunner membutuhkan beberapa tool untuk dijalankan dengan baik. Tool-tool ini dapat diinstal secara manual atau melalui manajer paket seperti apt, brew, dll.
 
 - subfinder
 - assetfinder
@@ -102,7 +102,7 @@ usage: jstunner.py [-h] [-t TARGET] [-l LIST] [--threads THREADS]
                    [--screenshot] [--nuclei] [--port-scan]
                    [--config CONFIG] [--output-dir OUTPUT_DIR]
 
-JST-Stunner - Tool untuk menemukan file JS, endpoint API, dan kerentanan pada domain
+JStunner - Tool untuk menemukan file JS, endpoint API, dan kerentanan pada domain
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -120,7 +120,7 @@ optional arguments:
 
 ## Konfigurasi
 
-JST-Stunner dapat dikonfigurasikan melalui file `config.json`. Contoh konfigurasi:
+JStunner dapat dikonfigurasikan melalui file `config.json`. Contoh konfigurasi:
 
 ```json
 {
@@ -156,7 +156,7 @@ target.com/
 
 ## Penanganan Error
 
-JST-Stunner mencatat semua aktivitas ke dalam file log di direktori `logs/`. Log ini berguna untuk debugging dan melacak kemajuan pemindaian.
+JStunner mencatat semua aktivitas ke dalam file log di direktori `logs/`. Log ini berguna untuk debugging dan melacak kemajuan pemindaian.
 
 ## Keamanan
 
