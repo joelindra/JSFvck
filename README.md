@@ -1,5 +1,7 @@
 # JST-Stunner
 
+![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
+
 JST-Stunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoint, dan kerentanan keamanan pada domain target. Alat ini dirancang untuk membantu pengujian penetrasi dan bug bounty hunter dalam mengidentifikasi potensial kerentanan.
 
 ## Fitur
