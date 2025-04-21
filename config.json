@@ -1,4 +1,7 @@
 {
-  "telegram_token": "",
-  "telegram_chat_id": ""
+  "discord_webhook_url": "https://discord.com/api/webhooks/your-webhook-url",
+  "telegram_bot_token": "your-telegram-bot-token",
+  "telegram_chat_id": "your-telegram-chat-id",
+  "threads": 5,
+  "rate_limit": 750
 }
