@@ -166,7 +166,3 @@ Tool ini hanya boleh digunakan pada sistem atau domain yang Anda miliki izin unt
 
 Copyright (c) 2025 Joel Indra. All rights reserved.
 Unauthorized copying, distribution, or modification is prohibited without explicit permission.
-
-## Kontribusi
-
-Kontribusi sangat diterima! Jika Anda menemukan bug atau ingin menambahkan fitur, silakan buat issue atau pull request.
