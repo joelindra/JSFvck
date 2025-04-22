@@ -1,14 +1,14 @@
 # JST-Stunner requirements
-pyfiglet==0.8.post1
-tqdm==4.66.1
-requests==2.31.0
-argparse==1.4.0
-ipaddress==1.0.23
-colorama==0.4.6
-dnspython==2.4.2
-validators==0.22.0
-python-whois==0.8.0
-pythonping==1.1.4
-urllib3==2.0.7
-beautifulsoup4==4.12.2
-lxml==4.9.3
+pyfiglet
+tqdm
+requests
+argparse
+ipaddress
+colorama
+dnspython
+validators
+python-whois
+pythonping
+urllib3
+beautifulsoup4
+lxml
