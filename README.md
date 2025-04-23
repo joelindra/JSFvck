@@ -1,7 +1,5 @@
 # JStunner
-### Password Required = GezzFromHell
-
-![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
+### Password Required = gezzfromhell
 
 JStunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoint, dan kerentanan keamanan pada domain target. Alat ini dirancang untuk membantu pengujian penetrasi dan bug bounty hunter dalam mengidentifikasi potensial kerentanan.
 
@@ -167,3 +165,5 @@ Tool ini hanya boleh digunakan pada sistem atau domain yang Anda miliki izin unt
 
 Copyright (c) 2025 Joel Indra. All rights reserved.
 Unauthorized copying, distribution, or modification is prohibited without explicit permission.
+
+![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
