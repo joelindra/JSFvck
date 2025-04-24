@@ -156,6 +156,10 @@ target.com/
 
 JStunner mencatat semua aktivitas ke dalam file log di direktori `logs/`. Log ini berguna untuk debugging dan melacak kemajuan pemindaian.
 
+## Lisensi
+
+Fork to contribute!
+
 ## Keamanan
 
 Tool ini hanya boleh digunakan pada sistem atau domain yang Anda miliki izin untuk mengujinya. Penggunaan pada sistem tanpa izin dapat melanggar hukum.
@@ -166,3 +170,5 @@ Copyright (c) 2025 Joel Indra. All rights reserved.
 Unauthorized copying, distribution, or modification is prohibited without explicit permission.
 
 ![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
+
+
