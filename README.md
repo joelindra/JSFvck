@@ -1,174 +1,130 @@
-# JStunner
+# JSFvck
 
-JStunner adalah alat rekognisi JavaScript untuk menemukan file JS, API endpoint, dan kerentanan keamanan pada domain target. Alat ini dirancang untuk membantu pengujian penetrasi dan bug bounty hunter dalam mengidentifikasi potensial kerentanan.
+**JSFvck** is a powerful and automated reconnaissance tool designed for security researchers and penetration testers. It streamlines the process of discovering subdomains, probing HTTP servers, extracting URLs from the Wayback Machine, validating URLs, and identifying JavaScript files, API endpoints, and potential secrets. Built with Python and leveraging popular open-source tools, JSFvck provides a comprehensive and user-friendly solution for web reconnaissance.
 
-## Fitur
+## Features
 
-- **Pencarian Subdomain** - Menemukan subdomain menggunakan `subfinder` dan `assetfinder`
-- **Resolusi DNS** - Menggunakan `dnsx` untuk mendapatkan informasi DNS dari subdomain
-- **HTTP Probing** - Mengidentifikasi host HTTP/HTTPS aktif menggunakan `httprobe`
-- **Wayback URL** - Mengekstrak URL dari arsip Wayback Machine
-- **Pencarian JavaScript** - Menemukan file JavaScript dan mengekstrak secret dengan `secretfinder`
-- **Fitur Opsional:**
-  - **Pengambilan Screenshot** - Mengambil screenshot dari host aktif menggunakan `gowitness`
-  - **Pemindaian Port** - Menemukan port terbuka menggunakan `nmap`
-  - **Deteksi Kerentanan** - Menemukan kerentanan menggunakan `nuclei`
+- **Subdomain Enumeration**: Discovers subdomains using tools like `subfinder` and `assetfinder`.
+- **DNS Resolution**: Resolves subdomains with `dnsx` to identify valid hosts.
+- **HTTP Probing**: Probes for active HTTP servers using `httprobe`.
+- **Wayback URL Extraction**: Extracts historical URLs from the Wayback Machine with `waybackurls` and `gau`.
+- **URL Validation**: Validates extracted URLs using `ffuf` to ensure they are accessible.
+- **JavaScript Analysis**: Identifies `.js` files, extracts API endpoints with `hakrawler`, and searches for secrets using `secretfinder`.
+- **Structured Output**: Organizes results into a clean directory structure for easy analysis.
+- **Rich Console Output**: Utilizes the `rich` library for visually appealing terminal output, including banners, progress bars, and summary tables.
+- **Discord Notifications**: Sends scan summaries and key results to a Discord webhook for real-time updates.
+- **Multi-threaded Scanning**: Supports parallel scanning of multiple targets for efficiency.
+- **Configurable**: Customizable via a JSON configuration file for webhook URLs, thread count, and more.
 
-## Prasyarat
+## Installation
 
-JStunner membutuhkan beberapa tool untuk dijalankan dengan baik. Tool-tool ini dapat diinstal secara manual atau melalui manajer paket seperti apt, brew, dll.
+### Prerequisites
+Ensure the following tools are installed on your system:
+- `subfinder`
+- `assetfinder`
+- `httprobe`
+- `waybackurls`
+- `ffuf`
+- `gau`
+- `dnsx`
+- `httpx`
+- `hakrawler`
+- Python packages: `pyfiglet`, `rich`, `requests`
 
-- subfinder
-- assetfinder
-- httprobe
-- waybackurls
-- ffuf
-- secretfinder
-- gau
-- dnsx
-- gowitness (opsional)
-- nmap (opsional)
-- nuclei (opsional)
-
-## Instalasi
-
-1. Clone repositori ini:
-```bash
-git clone https://github.com/joelindra/jstunner.git
-cd jstunner
-```
-
-2. Instal dependensi Python:
+You can install the Python dependencies using:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Pastikan semua tool external terinstal dan dapat diakses melalui PATH.
+### Clone the Repository
+```bash
+git clone https://github.com/Anonre/JSFvck.git
+cd JSFvck
+```
 
-## Penggunaan
+### Install Dependencies
+```bash
+pip install pyfiglet rich requests
+```
 
-### Perintah Dasar
+## Usage
 
-Untuk memindai satu domain (hanya pencarian JS):
+JSFvck can be run with a single target or a list of targets. Below are the available command-line arguments:
 
 ```bash
-python jstunner.py -t example.com
+python jsfvck.py -t <target>                # Scan a single domain/IP/CIDR
+python jsfvck.py -l <target_list.txt>      # Scan multiple targets from a file
+python jsfvck.py --threads 5               # Set the number of threads (default: 5)
+python jsfvck.py --config config.json      # Specify a custom config file
+python jsfvck.py --output-dir results      # Save results to a custom directory
 ```
 
-Untuk memindai multiple domain dari file:
+### Example Commands
+- Scan a single domain:
+  ```bash
+  python jsfvck.py -t example.com
+  ```
 
-```bash
-python jstunner.py -l domains.txt
-```
+- Scan multiple targets from a file:
+  ```bash
+  python jsfvck.py -l targets.txt --threads 10
+  ```
 
-### Opsi Tambahan
+- Save results to a specific directory:
+  ```bash
+  python jsfvck.py -t example.com --output-dir scan_results
+  ```
 
-Aktifkan pengambilan screenshot:
-
-```bash
-python jstunner.py -t example.com --screenshot
-```
-
-Aktifkan pemindaian port:
-
-```bash
-python jstunner.py -t example.com --port-scan
-```
-
-Aktifkan pemindaian kerentanan dengan Nuclei:
-
-```bash
-python jstunner.py -t example.com --nuclei
-```
-
-Kombinasikan beberapa opsi:
-
-```bash
-python jstunner.py -t example.com --screenshot --port-scan --nuclei
-```
-
-Sesuaikan jumlah thread:
-
-```bash
-python jstunner.py -t example.com --threads 10
-```
-
-### Semua Opsi
-
-```
-usage: jstunner.py [-h] [-t TARGET] [-l LIST] [--threads THREADS]
-                   [--screenshot] [--nuclei] [--port-scan]
-                   [--config CONFIG] [--output-dir OUTPUT_DIR]
-
-JStunner - Tool untuk menemukan file JS, endpoint API, dan kerentanan pada domain
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t TARGET, --target TARGET
-                        Target domain/IP/CIDR tunggal untuk di-scan
-  -l LIST, --list LIST  File berisi daftar target untuk di-scan
-  --threads THREADS     Jumlah thread yang digunakan untuk pemindaian paralel (default: 5)
-  --screenshot          Aktifkan pengambilan screenshot
-  --nuclei              Aktifkan pemindaian Nuclei
-  --port-scan           Aktifkan pemindaian port
-  --config CONFIG       Path ke file konfigurasi (default: config.json)
-  --output-dir OUTPUT_DIR
-                        Direktori untuk menyimpan hasil (default: direktori saat ini)
-```
-
-## Konfigurasi
-
-JStunner dapat dikonfigurasikan melalui file `config.json`. Contoh konfigurasi:
+### Configuration
+Create a `config.json` file to customize settings, such as Discord webhook URL, Telegram bot token, and thread count. Example:
 
 ```json
 {
-  "discord_webhook_url": "https://discord.com/api/webhooks/your-webhook-url",
-  "telegram_bot_token": "your-telegram-bot-token",
-  "telegram_chat_id": "your-telegram-chat-id",
+  "discord_webhook_url": "https://discord.com/api/webhooks/...",
+  "telegram_bot_token": "",
+  "telegram_chat_id": "",
   "threads": 5,
   "rate_limit": 750
 }
 ```
 
-## Struktur Hasil
-
-Hasil pemindaian disimpan dalam direktori yang dinamai sesuai domain target, dengan struktur sebagai berikut:
-
+## Output Structure
+Results are organized in a structured directory for each target:
 ```
-target.com/
+target/
 ├── sources/
 │   ├── subfinder.txt
 │   ├── assetfinder.txt
-│   └── all.txt
+│   ├── all.txt
 ├── result/
-│   ├── httpx/
-│   ├── wayback/
-│   ├── js/
-│   ├── endpoints/
 │   ├── dns/
-│   ├── screenshots/ (jika diaktifkan)
-│   ├── ports/ (jika diaktifkan)
-│   └── nuclei/ (jika diaktifkan)
-└── summary.txt
+│   │   ├── resolved.txt
+│   ├── httpx/
+│   │   ├── httpx.txt
+│   ├── wayback/
+│   │   ├── wayback.txt
+│   │   ├── valid.txt
+│   ├── js/
+│   │   ├── js.txt
+│   │   ├── secret.txt
+│   ├── endpoints/
+│   │   ├── api_endpoints.txt
+└── logs/
+    ├── scan_<timestamp>.log
 ```
 
-## Penanganan Error
+## Logging
+Logs are stored in the `logs/` directory with timestamps and rotate automatically to manage disk space. Logs include detailed information about the scanning process, errors, and results.
 
-JStunner mencatat semua aktivitas ke dalam file log di direktori `logs/`. Log ini berguna untuk debugging dan melacak kemajuan pemindaian.
+## Contributing
+Contributions are welcome! Feel free to submit pull requests, report bugs, or suggest features via GitHub issues.
 
-## Lisensi
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-Fork to contribute!
+## Disclaimer
+JSFvck is intended for authorized security testing and research purposes only. Unauthorized use on systems you do not own or have explicit permission to test is illegal and prohibited.
 
-## Keamanan
-
-Tool ini hanya boleh digunakan pada sistem atau domain yang Anda miliki izin untuk mengujinya. Penggunaan pada sistem tanpa izin dapat melanggar hukum.
-
-## Lisensi
-
-Copyright (c) 2025 Joel Indra. All rights reserved.
-Unauthorized copying, distribution, or modification is prohibited without explicit permission.
-
-![image](https://github.com/user-attachments/assets/c77f46bf-a8b6-4d9e-b9f8-35b33904245e)
-
-
+## Author
+**Anonre**  
+Feel free to reach out for collaboration or feedback!
