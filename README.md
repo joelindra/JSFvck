@@ -55,7 +55,7 @@ pip install pyfiglet rich requests
 JSFvck can be run with a single target or a list of targets. Below are the available command-line arguments:
 
 ```bash
-python jsfvck.py -t <target>                # Scan a single domain/IP/CIDR
+python jsfvck.py -t <target>               # Scan a single domain/IP/CIDR
 python jsfvck.py -l <target_list.txt>      # Scan multiple targets from a file
 python jsfvck.py --threads 5               # Set the number of threads (default: 5)
 python jsfvck.py --config config.json      # Specify a custom config file
