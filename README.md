@@ -1,6 +1,5 @@
 # Thoth
-
-<img width="863" height="438" alt="image" src="https://github.com/user-attachments/assets/72c29e97-64d0-45f0-b681-288039971ef8" />
+<img width="416" height="416" alt="image" src="https://github.com/user-attachments/assets/7809512f-d4e1-4df6-94fd-a13e9913a7cb" />
 
 **Thoth** is a powerful and automated reconnaissance tool designed for security researchers and penetration testers. It streamlines the process of discovering subdomains, probing HTTP servers, extracting URLs from the Wayback Machine, validating URLs, and identifying JavaScript files, API endpoints, and potential secrets. Built with Python and leveraging popular open-source tools, Thoth provides a comprehensive and user-friendly solution for web reconnaissance.
 
@@ -131,4 +130,5 @@ Thoth is intended for authorized security testing and research purposes only. Un
 **Anonre**  
 Feel free to reach out for collaboration or feedback!
 
-<img width="416" height="416" alt="image" src="https://github.com/user-attachments/assets/7809512f-d4e1-4df6-94fd-a13e9913a7cb" />
+## Screenshoot
+<img width="863" height="438" alt="image" src="https://github.com/user-attachments/assets/72c29e97-64d0-45f0-b681-288039971ef8" />
