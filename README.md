@@ -1,8 +1,8 @@
-# JSFvck
+# Thoth
 
 <img width="863" height="438" alt="image" src="https://github.com/user-attachments/assets/72c29e97-64d0-45f0-b681-288039971ef8" />
 
-**JSFvck** is a powerful and automated reconnaissance tool designed for security researchers and penetration testers. It streamlines the process of discovering subdomains, probing HTTP servers, extracting URLs from the Wayback Machine, validating URLs, and identifying JavaScript files, API endpoints, and potential secrets. Built with Python and leveraging popular open-source tools, JSFvck provides a comprehensive and user-friendly solution for web reconnaissance.
+**Thoth** is a powerful and automated reconnaissance tool designed for security researchers and penetration testers. It streamlines the process of discovering subdomains, probing HTTP servers, extracting URLs from the Wayback Machine, validating URLs, and identifying JavaScript files, API endpoints, and potential secrets. Built with Python and leveraging popular open-source tools, Thoth provides a comprehensive and user-friendly solution for web reconnaissance.
 
 ## Features
 
@@ -40,8 +40,8 @@ pip install -r requirements.txt
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/Anonre/JSFvck.git
-cd JSFvck
+git clone https://github.com/Anonre/thoth.git
+cd thoth
 ```
 
 ### Install Dependencies
@@ -51,30 +51,30 @@ pip install pyfiglet rich requests
 
 ## Usage
 
-JSFvck can be run with a single target or a list of targets. Below are the available command-line arguments:
+Thoth can be run with a single target or a list of targets. Below are the available command-line arguments:
 
 ```bash
-python jsfvck.py -t <target>               # Scan a single domain/IP/CIDR
-python jsfvck.py -l <target_list.txt>      # Scan multiple targets from a file
-python jsfvck.py --threads 5               # Set the number of threads (default: 5)
-python jsfvck.py --config config.json      # Specify a custom config file
-python jsfvck.py --output-dir results      # Save results to a custom directory
+python thoth.py -t <target>               # Scan a single domain/IP/CIDR
+python thoth.py -l <target_list.txt>      # Scan multiple targets from a file
+python thoth.py --threads 5               # Set the number of threads (default: 5)
+python thoth.py --config config.json      # Specify a custom config file
+python thoth.py --output-dir results      # Save results to a custom directory
 ```
 
 ### Example Commands
 - Scan a single domain:
   ```bash
-  python jsfvck.py -t example.com
+  python thoth.py -t example.com
   ```
 
 - Scan multiple targets from a file:
   ```bash
-  python jsfvck.py -l targets.txt --threads 10
+  python thoth.py -l targets.txt --threads 10
   ```
 
 - Save results to a specific directory:
   ```bash
-  python jsfvck.py -t example.com --output-dir scan_results
+  python thoth.py -t example.com --output-dir scan_results
   ```
 
 ### Configuration
@@ -125,8 +125,10 @@ Contributions are welcome! Feel free to submit pull requests, report bugs, or su
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Disclaimer
-JSFvck is intended for authorized security testing and research purposes only. Unauthorized use on systems you do not own or have explicit permission to test is illegal and prohibited.
+Thoth is intended for authorized security testing and research purposes only. Unauthorized use on systems you do not own or have explicit permission to test is illegal and prohibited.
 
 ## Author
 **Anonre**  
 Feel free to reach out for collaboration or feedback!
+
+<img width="416" height="416" alt="image" src="https://github.com/user-attachments/assets/7809512f-d4e1-4df6-94fd-a13e9913a7cb" />
