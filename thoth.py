@@ -23,7 +23,7 @@ console = Console()
 
 def print_banner():
     """Prints a visually appealing banner using pyfiglet and Rich."""
-    banner_text = pyfiglet.figlet_format("JSFvck", font="block")
+    banner_text = pyfiglet.figlet_format("Thoth", font="block")
     info_text = (
         "Copyright (c) [2025] [Anonre]\n"
         "All rights reserved.\n\n"
@@ -33,7 +33,7 @@ def print_banner():
 
     panel = Panel(
         Text(banner_text, justify="center") + "\n" + Text(info_text, justify="center"),
-        title="[bold green]JSFvck[/bold green]",
+        title="[bold green]Thoth[/bold green]",
         border_style="green",
         padding=(1, 2)
     )
@@ -463,7 +463,7 @@ def main():
     print_banner()
 
     parser = argparse.ArgumentParser(
-        description="JSFvck - A powerful tool for discovering JS files, API endpoints, and secrets.",
+        description="Thoth - A powerful tool for discovering JS files, API endpoints, and secrets.",
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument('-t', '--target', type=str, help='Single target domain/IP/CIDR to scan')
